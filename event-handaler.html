@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom event handlers</title>
+</head>
+<body>
+    <h1>Events handlers</h1>
+    <h3 id="input-text-display">your name</h3>
+    <input id="input-field" type="text">
+    <button id="input-btn">Update</button>
+    <br>
+    <br>
+    <h3 id="handlers">default text</h3>
+    <button onclick="handleOnClick()">Click to change above text</button>
+    <!-- option 2 -->
+    <button id="event">Click to change above text</button>
+    <script>
+        function handleOnClick(){
+            const handlerStatus=document.getElementById('handlers')
+            handlers.innerText='thank you button clicked by onclick'
+        }
+        //option 2
+        document.getElementById('event').addEventListener('click',function(){
+             const handlerStatus=document.getElementById('handlers')
+            handlers.innerText='thank you button clicked by eventListener'
+        })
+
+        document.getElementById('input-btn').addEventListener('click',function(){
+             const inputField=document.getElementById('input-field')
+             const inputText=inputField.value
+           const p=document.getElementById('input-text-display')
+           p.innerText=inputText
+
+           inputField.value=''
+            
+            
+            
+        })
+    </script>
+</body>
+</html>

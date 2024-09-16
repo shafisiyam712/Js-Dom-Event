@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment box</title>
+</head>
+<body>
+    <div id="container"><h1>This is comment area add your comment</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, porro. Ullam eum nesciunt enim hic ut dignissimos natus ratione quas, quis magnam aut ad, blanditiis laborum sit nam, tenetur eligendi debitis sed totam magni odit eaque quasi vitae. Itaque sunt expedita debitis at amet voluptatem dolor tempore optio quis dolores!</p>
+    <p>Culpa illo provident odio delectus voluptate ipsa expedita consequatur aut libero atque, corrupti voluptatibus quos consectetur ipsam velit excepturi inventore voluptates? Atque quis eveniet, sapiente quidem rerum ea nemo veritatis nesciunt. Nostrum nihil ducimus tempora cupiditate recusandae ab, optio excepturi perspiciatis iusto impedit est distinctio dolorum sunt voluptatem, sint accusamus.</p>
+    <p>Delectus ut eum vero modi. Modi sapiente itaque non ipsa alias expedita impedit? Sint dicta repellendus id iure. Tenetur dolorum perspiciatis nobis modi omnis facilis nihil voluptatum asperiores et dolor possimus ratione, quasi soluta libero cupiditate, cum distinctio repellendus ducimus laudantium explicabo reprehenderit! Ab similique omnis distinctio asperiores, itaque doloribus?</p></div>
+    
+
+    <textarea name="" id="text-area" cols="60" rows="10"></textarea>
+    <br>
+    <button id="btn-post">Post</button>
+
+    <script>
+        // add event listener to the post button
+        document.getElementById('btn-post').addEventListener('click',function(){
+            //get the comment inside the text area
+            const commentBox=document.getElementById('text-area')
+            const newComment=commentBox.value
+            //set the comment inside the container
+            const commentContainer=document.getElementById('container')
+            const p=document.createElement('p')
+            p.innerText=newComment
+            commentContainer.appendChild(p)
+            //clear the comment box
+            commentBox.value=''
+        })
+    </script>
+</body>
+</html>
